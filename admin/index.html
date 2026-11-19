@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#123b2b"><title>Store Admin | Demo</title>
+  <meta name="theme-color" content="#123b2b"><meta name="robots" content="noindex, nofollow"><title>Store Admin | Demo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="admin-upgrades.css">
   <script src="../config.js" defer></script><script src="../products.js" defer></script><script src="admin.js" defer></script>
 </head>
 <body>
-  <aside class="sidebar" id="sidebar">
+  <aside class="sidebar" id="sidebar" aria-label="Admin navigation">
     <a class="admin-brand" href="../index.html"><span class="brand-icon">2B</span><span><b data-brand-name>2 BROTHERS</b><small>STORE ADMIN</small></span></a>
     <span class="side-label">WORKSPACE</span>
     <a class="side-link active" href="#overview">▦ <span>Overview</span></a>
@@ -22,15 +23,16 @@
     <a class="side-link" href="#settings">⚙ <span>Settings</span></a>
     <div class="sidebar-bottom"><span class="avatar">AD</span><span><b>Demo Admin</b><small>Preview account</small></span></div>
   </aside>
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
   <main class="main-area">
-    <header class="topbar"><button id="sidebarToggle" class="mobile-toggle">☰</button><div><span class="crumb">Workspace /</span> Overview</div><div class="top-actions"><span class="status-pill">● Demo mode</span><button class="admin-avatar">AD</button></div></header>
+    <header class="topbar"><button id="sidebarToggle" class="mobile-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar">☰</button><div><span class="crumb">Workspace /</span> <span id="crumbCurrent">Overview</span></div><div class="top-actions"><span class="status-pill">● Demo mode</span><button class="admin-avatar" aria-label="Admin account">AD</button></div></header>
     <div class="content" id="overview">
       <div class="welcome-row"><div><span class="eyebrow">STORE OVERVIEW</span><h1>Good day, Admin</h1><p>Here is a snapshot of your store. Demo figures are illustrative only.</p></div><a class="view-store" href="../index.html">↗ View storefront</a></div>
       <section class="stats-grid">
         <article class="stat-card"><span class="stat-icon green">↗</span><small>Sample revenue</small><strong>SAR 8,420</strong><em>Demo data</em></article>
         <article class="stat-card"><span class="stat-icon cyan">▤</span><small>Orders</small><strong>128</strong><em>Demo data</em></article>
         <article class="stat-card"><span class="stat-icon yellow">♙</span><small>Customers</small><strong>864</strong><em>Demo data</em></article>
-        <article class="stat-card"><span class="stat-icon red">◇</span><small>Products</small><strong id="productCount">0</strong><em>Loaded from catalogue</em></article>
+        <article class="stat-card"><span class="stat-icon red">◇</span><small>Products</small><strong id="productCount">0</strong><em id="productNote">Loaded from catalogue</em></article>
       </section>
       <section class="dashboard-grid">
         <article class="panel chart-panel" id="reports"><div class="panel-heading"><div><h2>Sales overview</h2><p>Illustrative weekly activity</p></div><span class="select-chip">This week⌄</span></div>
@@ -42,7 +44,7 @@
           <div class="order-row"><span class="order-avatar yellow-bg">NO</span><span><b>#ORD-1046</b><small>Noor O. · 3 items</small></span><strong>SAR 210</strong><em class="tag delivered">Delivered</em></div>
         </article>
       </section>
-      <section class="panel inventory-panel" id="inventory"><div class="panel-heading"><div><h2>Product catalogue</h2><p>Sample catalogue preview · edit source data in products.js</p></div><button class="small-action" id="refreshProducts">Refresh list</button></div>
+      <section class="panel inventory-panel" id="inventory"><div class="panel-heading"><div><h2>Product catalogue</h2><p>Sample catalogue preview · edit source data in products.js</p></div><div class="panel-tools"><input id="productSearch" type="search" placeholder="Search products..." aria-label="Search products"><button class="small-action" id="refreshProducts">Refresh list</button></div></div>
         <div class="table-wrap"><table><thead><tr><th>Product</th><th>Category</th><th>Regular price</th><th>Offer price</th><th>Status</th></tr></thead><tbody id="productTable"></tbody></table></div>
       </section>
       <section class="lower-grid">
