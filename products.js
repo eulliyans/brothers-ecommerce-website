@@ -1,7 +1,10 @@
 /* =========================================================
    PRODUCT CATALOGUE
-   Add, edit or remove sample products in this array.
-   Replace sample images and prices before publishing.
+   Each product needs: id (unique number), name, category (must match
+   a category id below), price, offerPrice (number or null), rating,
+   badge (text or "") and image (URL or "assets/your-photo.jpg").
+   Sample names, prices and photos are placeholders: replace them
+   with your real products before publishing.
    ========================================================= */
 window.STORE_CATEGORIES = [
   { id: "makeup", name: "Makeup & Cosmetics", image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=700&q=80" },
@@ -29,5 +32,14 @@ window.STORE_PRODUCTS = [
   { id: 5, name: "Soft Floral Fragrance", category: "fragrance", price: 110, offerPrice: null, rating: 4.6, badge: "", image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=85" },
   { id: 6, name: "Everyday Style Handbag", category: "accessories", price: 145, offerPrice: 119, rating: 4.7, badge: "Special price", image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=85" },
   { id: 7, name: "Hair Clip Gift Set", category: "hair", price: 35, offerPrice: null, rating: 4.5, badge: "", image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=85" },
-  { id: 8, name: "Thoughtful Gift Box", category: "gifts", price: 99, offerPrice: 79, rating: 4.9, badge: "Gift idea", image: "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=800&q=85" }
+  { id: 8, name: "Thoughtful Gift Box", category: "gifts", price: 99, offerPrice: 79, rating: 4.9, badge: "Gift idea", image: "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=800&q=85" },
+
+  // Added so every category has at least one product (sample data)
+  { id: 9, name: "Relaxed Everyday Outfit", category: "fashion", price: 165, offerPrice: 139, rating: 4.6, badge: "New", image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=85" },
+  { id: 10, name: "Kitchen Essentials Set", category: "home", price: 85, offerPrice: null, rating: 4.5, badge: "", image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=85" },
+  { id: 11, name: "Fresh Pantry Basket", category: "grocery", price: 60, offerPrice: 49, rating: 4.7, badge: "Offer", image: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=85" },
+  { id: 12, name: "Soft Baby Care Set", category: "kids", price: 70, offerPrice: null, rating: 4.8, badge: "Popular", image: "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=800&q=85" },
+  { id: 13, name: "Home Workout Kit", category: "sports", price: 95, offerPrice: 79, rating: 4.6, badge: "Special price", image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=85" },
+  { id: 14, name: "Notebook & Pen Collection", category: "books", price: 30, offerPrice: null, rating: 4.4, badge: "", image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=85" },
+  { id: 15, name: "Car Care Essentials", category: "auto", price: 55, offerPrice: 45, rating: 4.3, badge: "Offer", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=800&q=85" }
 ];
